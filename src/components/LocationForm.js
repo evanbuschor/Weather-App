@@ -1,10 +1,11 @@
+import "./LocationForm.css";
 import React, { Component } from "react";
 
-export default class Form extends Component {
+export default class LocationForm extends Component {
 	render() {
 		console.log(process.env.REACT_APP_WEATHER_API_KEY);
 		return (
-			<div>
+			<div className="LocationForm">
 				<form onSubmit={this.props.getWeather}>
 					<select type="text" name="city" placeholder="city">
 						<option value="cincinnati">Cincinnati</option>

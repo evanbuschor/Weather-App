@@ -1,6 +1,8 @@
+import "./App.css";
+import { Container } from "@material-ui/core";
 import React from "react";
 import Titles from "./components/Titles";
-import Form from "./components/Form";
+import LocationForm from "./components/LocationForm";
 import Weather from "./components/Weather";
 import cookie from "cookie_js";
 import { Kelvin } from "node-temperature-converter";
@@ -67,17 +69,17 @@ class App extends React.Component {
 	};
 	render() {
 		return (
-			<div>
+			<Container className="app">
 				<Titles
 					changeMeasureSystem={this.changeMeasureSystem}
 					measureSystem={this.state.measureSystem}
 				/>
-				<Form getWeather={this.getWeather} />
+				<LocationForm getWeather={this.getWeather} />
 				<Weather
 					weatherData={this.state.weatherData}
 					measureSystem={this.state.measureSystem}
 				/>
-			</div>
+			</Container>
 		);
 	}
 }
